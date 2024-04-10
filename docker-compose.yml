@@ -1,0 +1,35 @@
+version: '3.2'
+
+services:
+
+  frontend:
+    container_name: frontend
+    build: frontend
+    ports:
+      - 20080:80
+    volumes:
+      # Re-use local composer cache via host-volume
+      - ~/.composer-docker/cache:/root/.composer/cache:delegated
+      # Mount source-code for development
+      - ./:/app
+
+  backend:
+    container_name: backend
+    build: backend
+    ports:
+      - 21080:80
+    volumes:
+      # Re-use local composer cache via host-volume
+      - ~/.composer-docker/cache:/root/.composer/cache:delegated
+      # Mount source-code for development
+      - ./:/app
+
+  pgsql:
+    container_name: pgsql
+    image: postgres:16.2
+    ports:
+      - "5432:5432"
+    environment:
+      - POSTGRES_DB=forecast
+      - POSTGRES_USER=forecast
+      - POSTGRES_PASSWORD=weather
