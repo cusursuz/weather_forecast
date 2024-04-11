@@ -31,6 +31,17 @@ class CityController extends Controller
                         'delete' => ['POST'],
                     ],
                 ],
+                'access' => [
+                    'class' => AccessControl::class,
+                    'only' => ['index', 'create', 'update', 'delete'],
+                    'rules' => [
+                        [
+                            'allow' => true,
+                            'actions' => ['index', 'create', 'update', 'delete'],
+                            'roles' => ['@'],
+                        ],
+                    ],
+                ],
             ]
         );
     }

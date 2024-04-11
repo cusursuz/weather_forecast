@@ -25,6 +25,7 @@ $this->title = 'Login';
 
             <div class="form-group">
                 <?= Html::submitButton('Login', ['class' => 'btn btn-primary btn-block', 'name' => 'login-button']) ?>
+                <?= Html::a('Signup', '/site/signup', ['class' => 'btn btn-danger btn-block', 'name' => 'login-button']) ?>
             </div>
 
         <?php ActiveForm::end(); ?>

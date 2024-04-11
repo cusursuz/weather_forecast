@@ -10,7 +10,7 @@ $params = array_merge(
 return [
     'id' => 'app-backend',
     'name' => 'Forecast Admin Panel',
-    'homeUrl' => '/country/index',
+    'defaultRoute' => 'country/index',
     'basePath' => dirname(__DIR__),
     'controllerNamespace' => 'backend\controllers',
     'bootstrap' => ['log'],
