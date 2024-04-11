@@ -1,4 +1,5 @@
 <?php
+
 $params = array_merge(
     require __DIR__ . '/../../common/config/params.php',
     require __DIR__ . '/../../common/config/params-local.php',
@@ -8,6 +9,8 @@ $params = array_merge(
 
 return [
     'id' => 'app-backend',
+    'name' => 'Forecast Admin Panel',
+    'homeUrl' => '/country/index',
     'basePath' => dirname(__DIR__),
     'controllerNamespace' => 'backend\controllers',
     'bootstrap' => ['log'],
